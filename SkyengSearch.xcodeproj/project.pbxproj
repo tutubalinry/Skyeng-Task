@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A094DE3242E355E000127BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A094DE2242E355E000127BE /* AppDelegate.swift */; };
+		0A094DEC242E3560000127BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A094DEB242E3560000127BE /* Assets.xcassets */; };
+		0A094DEF242E3560000127BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A094DED242E3560000127BE /* LaunchScreen.storyboard */; };
+		0A5483BB242E3A98001DC023 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483BA242E3A98001DC023 /* Coordinator.swift */; };
+		0A5483BD242E3AC8001DC023 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483BC242E3AC8001DC023 /* MainCoordinator.swift */; };
+		0A5483C1242E3B9D001DC023 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483C0242E3B9D001DC023 /* SearchViewController.swift */; };
+		0A5483C3242E3BA5001DC023 /* SearchReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483C2242E3BA5001DC023 /* SearchReactor.swift */; };
+		0A5483C6242E3C03001DC023 /* SkyengAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483C5242E3C03001DC023 /* SkyengAPI.swift */; };
+		0A5483C8242E3DDE001DC023 /* SkyengAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483C7242E3DDE001DC023 /* SkyengAPIProvider.swift */; };
+		0A5483CB242E486A001DC023 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483CA242E486A001DC023 /* SearchResult.swift */; };
+		0A5483CD242E4912001DC023 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483CC242E4912001DC023 /* Meaning.swift */; };
+		0A5483D1242E4FC4001DC023 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483D0242E4FC4001DC023 /* SearchRow.swift */; };
+		FF375FC083880D114AD9A28E /* Pods_SkyengSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A094DDF242E355E000127BE /* SkyengSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyengSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A094DE2242E355E000127BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A094DEB242E3560000127BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A094DEE242E3560000127BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A094DF0242E3560000127BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A5483BA242E3A98001DC023 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0A5483BC242E3AC8001DC023 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		0A5483C0242E3B9D001DC023 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0A5483C2242E3BA5001DC023 /* SearchReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReactor.swift; sourceTree = "<group>"; };
+		0A5483C5242E3C03001DC023 /* SkyengAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyengAPI.swift; sourceTree = "<group>"; };
+		0A5483C7242E3DDE001DC023 /* SkyengAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyengAPIProvider.swift; sourceTree = "<group>"; };
+		0A5483CA242E486A001DC023 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		0A5483CC242E4912001DC023 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
+		0A5483D0242E4FC4001DC023 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
+		0E4A290708268BE9FF0CF3EF /* Pods-SkyengSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyengSearch.release.xcconfig"; path = "Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch.release.xcconfig"; sourceTree = "<group>"; };
+		14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyengSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCFCF75609DE5C942B45458 /* Pods-SkyengSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyengSearch.debug.xcconfig"; path = "Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A094DDC242E355E000127BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF375FC083880D114AD9A28E /* Pods_SkyengSearch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A094DD6242E355E000127BE = {
+			isa = PBXGroup;
+			children = (
+				0A094DE1242E355E000127BE /* SkyengSearch */,
+				0A094DE0242E355E000127BE /* Products */,
+				40C83237DB3B94320987677C /* Pods */,
+				56FC61BB42B42C72BDD71F22 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0A094DE0242E355E000127BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A094DDF242E355E000127BE /* SkyengSearch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A094DE1242E355E000127BE /* SkyengSearch */ = {
+			isa = PBXGroup;
+			children = (
+				0A094DE2242E355E000127BE /* AppDelegate.swift */,
+				0A5483CE242E4FA8001DC023 /* DataSources */,
+				0A5483C9242E485E001DC023 /* Models */,
+				0A5483C4242E3BF0001DC023 /* API */,
+				0A5483BE242E3B89001DC023 /* Screens */,
+				0A5483B9242E3A7E001DC023 /* Coordinators */,
+				0A5483B7242E3A6C001DC023 /* Resources */,
+				0A5483B8242E3A74001DC023 /* Storyboards */,
+				0A5483B6242E3A5F001DC023 /* Config */,
+			);
+			path = SkyengSearch;
+			sourceTree = "<group>";
+		};
+		0A5483B6242E3A5F001DC023 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0A094DF0242E3560000127BE /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		0A5483B7242E3A6C001DC023 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A094DEB242E3560000127BE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0A5483B8242E3A74001DC023 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0A094DED242E3560000127BE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0A5483B9242E3A7E001DC023 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				0A5483BA242E3A98001DC023 /* Coordinator.swift */,
+				0A5483BC242E3AC8001DC023 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		0A5483BE242E3B89001DC023 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0A5483BF242E3B8F001DC023 /* Search */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0A5483BF242E3B8F001DC023 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0A5483C0242E3B9D001DC023 /* SearchViewController.swift */,
+				0A5483C2242E3BA5001DC023 /* SearchReactor.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0A5483C4242E3BF0001DC023 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0A5483C5242E3C03001DC023 /* SkyengAPI.swift */,
+				0A5483C7242E3DDE001DC023 /* SkyengAPIProvider.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0A5483C9242E485E001DC023 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A5483CA242E486A001DC023 /* SearchResult.swift */,
+				0A5483CC242E4912001DC023 /* Meaning.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A5483CE242E4FA8001DC023 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				0A5483CF242E4FB7001DC023 /* Search */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		0A5483CF242E4FB7001DC023 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0A5483D0242E4FC4001DC023 /* SearchRow.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		40C83237DB3B94320987677C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDCFCF75609DE5C942B45458 /* Pods-SkyengSearch.debug.xcconfig */,
+				0E4A290708268BE9FF0CF3EF /* Pods-SkyengSearch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		56FC61BB42B42C72BDD71F22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A094DDE242E355E000127BE /* SkyengSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A094DF3242E3560000127BE /* Build configuration list for PBXNativeTarget "SkyengSearch" */;
+			buildPhases = (
+				0F551E47DCE2C7CDBA659B40 /* [CP] Check Pods Manifest.lock */,
+				0A094DDB242E355E000127BE /* Sources */,
+				0A094DDC242E355E000127BE /* Frameworks */,
+				0A094DDD242E355E000127BE /* Resources */,
+				F823183966609721A079495C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyengSearch;
+			productName = SkyengSearch;
+			productReference = 0A094DDF242E355E000127BE /* SkyengSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A094DD7242E355E000127BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Roman Tutubalin";
+				TargetAttributes = {
+					0A094DDE242E355E000127BE = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 0A094DDA242E355E000127BE /* Build configuration list for PBXProject "SkyengSearch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A094DD6242E355E000127BE;
+			productRefGroup = 0A094DE0242E355E000127BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A094DDE242E355E000127BE /* SkyengSearch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A094DDD242E355E000127BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A094DEF242E3560000127BE /* LaunchScreen.storyboard in Resources */,
+				0A094DEC242E3560000127BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F551E47DCE2C7CDBA659B40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkyengSearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F823183966609721A079495C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A094DDB242E355E000127BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A5483C8242E3DDE001DC023 /* SkyengAPIProvider.swift in Sources */,
+				0A5483C1242E3B9D001DC023 /* SearchViewController.swift in Sources */,
+				0A5483CB242E486A001DC023 /* SearchResult.swift in Sources */,
+				0A5483C6242E3C03001DC023 /* SkyengAPI.swift in Sources */,
+				0A5483BD242E3AC8001DC023 /* MainCoordinator.swift in Sources */,
+				0A094DE3242E355E000127BE /* AppDelegate.swift in Sources */,
+				0A5483D1242E4FC4001DC023 /* SearchRow.swift in Sources */,
+				0A5483C3242E3BA5001DC023 /* SearchReactor.swift in Sources */,
+				0A5483BB242E3A98001DC023 /* Coordinator.swift in Sources */,
+				0A5483CD242E4912001DC023 /* Meaning.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0A094DED242E3560000127BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A094DEE242E3560000127BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A094DF1242E3560000127BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A094DF2242E3560000127BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0A094DF4242E3560000127BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDCFCF75609DE5C942B45458 /* Pods-SkyengSearch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG4A3GR2VY;
+				INFOPLIST_FILE = SkyengSearch/Config/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = noname.SkyengSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A094DF5242E3560000127BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E4A290708268BE9FF0CF3EF /* Pods-SkyengSearch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG4A3GR2VY;
+				INFOPLIST_FILE = SkyengSearch/Config/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = noname.SkyengSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A094DDA242E355E000127BE /* Build configuration list for PBXProject "SkyengSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A094DF1242E3560000127BE /* Debug */,
+				0A094DF2242E3560000127BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A094DF3242E3560000127BE /* Build configuration list for PBXNativeTarget "SkyengSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A094DF4242E3560000127BE /* Debug */,
+				0A094DF5242E3560000127BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A094DD7242E355E000127BE /* Project object */;
+}

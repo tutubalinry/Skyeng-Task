@@ -29,6 +29,14 @@ struct Meaning {
     let soundURL: URL?
 }
 
+extension Meaning: Equatable {
+    
+    static func ==(lhs: Meaning, rhs: Meaning) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+}
+
 extension Meaning: Decodable {
     
     enum CodingKeys: CodingKey {

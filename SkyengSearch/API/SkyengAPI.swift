@@ -9,7 +9,7 @@ extension SkyengAPI {
     var parameters: [String : Any] {
         switch self {
         case let .search(word: word, page: page, pageSize: pageSize):
-            return ["word" : word, "page" : page, "pageSize" : pageSize]
+            return ["search" : word, "page" : page, "pageSize" : pageSize]
         }
     }
     

@@ -2,33 +2,49 @@ import RxSwift
 import ReactorKit
 import Moya
 
-let SearchPageSize: Int = 30
+let SearchPageSize: Int = 20
 
 class SearchReactor: Reactor {
     
     enum Action {
         case search(String)
+        case loadMore
     }
     
     enum Mutation {
-        case results([SearchResult])
+        case word(String)
+        case page(Int)
+        case results([SearchResult], clear: Bool)
         case error(String?)
     }
     
     struct State {
         var sections: [SearchSection] = []
+        
+        var word: String = ""
+        
+        var page: Int = 1
     }
     
     var initialState: State = State()
     
-    private var currentRequest: Cancellable?
+    private var isLoadMore: Bool = false
+    
+    private var cancelRequest: PublishSubject<Void> = PublishSubject()
     
     weak var coordinatorDelegate: MainCoordinatorProtocol?
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case let .search(word):
-            return search(word: word, page: 0, pageSize: SearchPageSize)
+            return merge(.word(word), .page(1), with: search(word: word, page: 1, pageSize: SearchPageSize, clear: true))
+            
+        case .loadMore:
+            if isLoadMore {
+                let page: Int = currentState.page + 1
+                return merge(.page(page), with: search(word: currentState.word, page: page, pageSize: SearchPageSize, clear: false))
+            }
+            return .empty()
         }
     }
     
@@ -36,13 +52,32 @@ class SearchReactor: Reactor {
         var state = state
         
         switch mutation {
-        case let .results(results):
-            state.sections = [
-                SearchSection(index: 0, items: results.map(SearchRow.result))
-            ]
+        case let .word(word):
+            state.word = word
+            
+        case let .page(page):
+            state.page = page
+            
+        case let .results(results, clear: clear):
+            var items: [SearchRow] = []
+            if let first = state.sections.first, !clear {
+                items = first.items.filter { $0 != .loading }
+                results.forEach { result in
+                    if !items.map({ $0.identity }).contains(String(result.id)) {
+                        items.append(SearchRow.result(result))
+                    }
+                }
+            } else {
+                items = results.map(SearchRow.result)
+            }
+            if results.count == SearchPageSize {
+                items.append(.loading)
+            }
+            isLoadMore = results.count == SearchPageSize
+            state.sections = [SearchSection(index: 0, items: items)]
             
         case let .error(message):
-            debugPrint(message)
+            debugPrint(">>>>>>>>>>>>>>>>: \(message ?? "-")")
         }
         
         return state
@@ -52,34 +87,19 @@ class SearchReactor: Reactor {
 extension SearchReactor {
 //    MARK: - Networking
     
-    private func search(word: String, page: Int, pageSize: Int) -> Observable<Mutation> {
-        currentRequest?.cancel()
+    private func search(word: String, page: Int, pageSize: Int, clear: Bool) -> Observable<Mutation> {
+        cancelRequest.onNext(())
         
         if word.isEmpty {
-            return .just(.results([]))
+            return .just(.results([], clear: true))
         }
         
-        return Observable<[SearchResult]>.create { [unowned self] observer -> Disposable in
-            self.currentRequest = SkyengAPIProvider.shared.request(.search(word: word, page: page, pageSize: pageSize)) { result in
-                switch result {
-                case let .success(response):
-                    do {
-                        let decoder = JSONDecoder()
-                        observer.onNext(try decoder.decode([SearchResult].self, from: response.data))
-                        observer.onCompleted()
-                    } catch {
-                        observer.onError(error)
-                    }
-                    
-                case let .failure(error):
-                    observer.onError(error)
-                }
-            }
-            
-            return Disposables.create()
-        }
-        .flatMap { results -> Observable<Mutation> in .just(.results(results)) }
-        .catchError { error -> Observable<Mutation> in .just(.error(error.localizedDescription)) }
+        return SkyengAPIProvider.shared.rx.request(.search(word: word, page: page, pageSize: pageSize))
+            .asObservable()
+            .takeUntil(cancelRequest)
+            .map { response -> [SearchResult] in try parser(data: response.data) }
+            .flatMap { results -> Observable<Mutation> in .just(.results(results, clear: clear)) }
+            .catchError { error -> Observable<Mutation> in .just(.error(error.localizedDescription)) }
     }
     
 }

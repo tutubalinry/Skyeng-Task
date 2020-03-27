@@ -9,11 +9,13 @@ class SearchViewController: UIViewController, View {
     
     var disposeBag: DisposeBag = DisposeBag()
     
-    private let tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        view.register(UITableViewCell.self, forCellReuseIdentifier: "AnyCell")
+        view.estimatedRowHeight = 50
+        view.rowHeight = UITableView.automaticDimension
+        view.register(SearchResultCell.self, LoadingCell.self)
         return view
     }()
     
@@ -42,6 +44,8 @@ class SearchViewController: UIViewController, View {
         
         view.addSubview(tableView)
         
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -52,12 +56,13 @@ class SearchViewController: UIViewController, View {
         let dataSource = RxTableViewSectionedAnimatedDataSource<SearchSection>(configureCell: { (source, tableView, indexPath, item) -> UITableViewCell in
             switch item {
             case let .result(result):
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AnyCell", for: indexPath)
-                cell.textLabel?.text = result.meanings.map({ $0.translationText }).joined(separator: ", ")
+                let cell: SearchResultCell = tableView.dequeue(for: indexPath)
+                cell.setup(result: result)
                 return cell
                 
             case .loading:
-                return tableView.dequeueReusableCell(withIdentifier: "AnyCell", for: indexPath)
+                let cell: LoadingCell = tableView.dequeue(for: indexPath)
+                return cell
             }
         })
         
@@ -68,10 +73,19 @@ class SearchViewController: UIViewController, View {
     
 }
 
+extension SearchViewController: UITableViewDelegate {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.isReachedBottom(withTolerance: 30) {
+            reactor?.action.onNext(.loadMore)
+        }
+    }
+    
+}
+
 extension SearchViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        debugPrint("updateSearchResults")
         reactor?.action.onNext(.search(searchController.searchBar.text ?? ""))
     }
     

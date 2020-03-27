@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import ReactorKit
+import RxDataSources
 
 class SearchViewController: UIViewController, View {
     
@@ -12,6 +13,7 @@ class SearchViewController: UIViewController, View {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
+        view.register(UITableViewCell.self, forCellReuseIdentifier: "AnyCell")
         return view
     }()
     
@@ -47,7 +49,21 @@ class SearchViewController: UIViewController, View {
     }
     
     func bind(reactor: SearchReactor) {
+        let dataSource = RxTableViewSectionedAnimatedDataSource<SearchSection>(configureCell: { (source, tableView, indexPath, item) -> UITableViewCell in
+            switch item {
+            case let .result(result):
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AnyCell", for: indexPath)
+                cell.textLabel?.text = result.meanings.map({ $0.translationText }).joined(separator: ", ")
+                return cell
+                
+            case .loading:
+                return tableView.dequeueReusableCell(withIdentifier: "AnyCell", for: indexPath)
+            }
+        })
         
+        reactor.state.map { $0.sections }
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
     
 }

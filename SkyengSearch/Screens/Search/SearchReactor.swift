@@ -16,7 +16,7 @@ class SearchReactor: Reactor {
     }
     
     struct State {
-        var results: [SearchRow] = []
+        var sections: [SearchSection] = []
     }
     
     var initialState: State = State()
@@ -37,7 +37,9 @@ class SearchReactor: Reactor {
         
         switch mutation {
         case let .results(results):
-            state.results.append(contentsOf: results.map(SearchRow.result))
+            state.sections = [
+                SearchSection(index: 0, items: results.map(SearchRow.result))
+            ]
             
         case let .error(message):
             debugPrint(message)

@@ -19,6 +19,7 @@
 		0A5483CB242E486A001DC023 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483CA242E486A001DC023 /* SearchResult.swift */; };
 		0A5483CD242E4912001DC023 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483CC242E4912001DC023 /* Meaning.swift */; };
 		0A5483D1242E4FC4001DC023 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483D0242E4FC4001DC023 /* SearchRow.swift */; };
+		0A5483D3242E5436001DC023 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483D2242E5436001DC023 /* SearchSection.swift */; };
 		FF375FC083880D114AD9A28E /* Pods_SkyengSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		0A5483CA242E486A001DC023 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		0A5483CC242E4912001DC023 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
 		0A5483D0242E4FC4001DC023 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
+		0A5483D2242E5436001DC023 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
 		0E4A290708268BE9FF0CF3EF /* Pods-SkyengSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyengSearch.release.xcconfig"; path = "Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch.release.xcconfig"; sourceTree = "<group>"; };
 		14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyengSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCFCF75609DE5C942B45458 /* Pods-SkyengSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyengSearch.debug.xcconfig"; path = "Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				0A5483D0242E4FC4001DC023 /* SearchRow.swift */,
+				0A5483D2242E5436001DC023 /* SearchSection.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A5483C8242E3DDE001DC023 /* SkyengAPIProvider.swift in Sources */,
+				0A5483D3242E5436001DC023 /* SearchSection.swift in Sources */,
 				0A5483C1242E3B9D001DC023 /* SearchViewController.swift in Sources */,
 				0A5483CB242E486A001DC023 /* SearchResult.swift in Sources */,
 				0A5483C6242E3C03001DC023 /* SkyengAPI.swift in Sources */,

@@ -19,3 +19,11 @@ extension SearchRow: IdentifiableType {
         }
     }
 }
+
+extension SearchRow: Equatable {
+    
+    static func ==(lhs: SearchRow, rhs: SearchRow) -> Bool {
+        lhs.identity == rhs.identity
+    }
+    
+}

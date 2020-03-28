@@ -20,3 +20,18 @@ extension UITableView {
     }
     
 }
+
+extension Reactive where Base: UITableView {
+    
+    var deselect: Binder<IndexPath> {
+        return Binder(base, scheduler: MainScheduler.asyncInstance) { (tableView, indexPath) in
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+ 
+    var contentInset: Binder<UIEdgeInsets> {
+        return Binder(base, scheduler: MainScheduler.asyncInstance, binding: { (tableView, insets) in
+            tableView.contentInset = insets
+        })
+    }
+}

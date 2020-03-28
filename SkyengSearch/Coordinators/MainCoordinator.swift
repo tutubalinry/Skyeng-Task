@@ -1,9 +1,7 @@
 import UIKit
 
 protocol MainCoordinatorProtocol: class {
-    
-    func showDetails()
-    
+    func showDetails(result: SearchResult)
 }
 
 class MainCoordinator: Coordinator {
@@ -27,8 +25,12 @@ class MainCoordinator: Coordinator {
 
 extension MainCoordinator: MainCoordinatorProtocol {
     
-    func showDetails() {
-        
+    func showDetails(result: SearchResult) {
+        DispatchQueue.main.async { [weak self] in
+            let view = DetailsViewController()
+            view.reactor = DetailsReactor(data: result)
+            self?.navigationController.pushViewController(view, animated: true)
+        }
     }
     
 }

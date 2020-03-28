@@ -9,12 +9,17 @@ class SearchReactor: Reactor {
     enum Action {
         case search(String)
         case loadMore
+        case select(IndexPath)
+        case tableViewOffset(CGFloat)
     }
     
     enum Mutation {
+        case isBusy(Bool)
         case word(String)
         case page(Int)
+        case select(IndexPath)
         case results([SearchResult], clear: Bool)
+        case tableViewOffset(CGFloat)
         case error(String?)
     }
     
@@ -24,6 +29,14 @@ class SearchReactor: Reactor {
         var word: String = ""
         
         var page: Int = 1
+        
+        var isBusy: Bool = false
+        
+        var tableViewOffset: CGFloat = 0
+        
+        var showEmptyLabel: Bool {
+            return !isBusy && !word.isEmpty && sections.first?.items.count == 0
+        }
     }
     
     var initialState: State = State()
@@ -34,17 +47,29 @@ class SearchReactor: Reactor {
     
     weak var coordinatorDelegate: MainCoordinatorProtocol?
     
+    func transform(action: Observable<SearchReactor.Action>) -> Observable<SearchReactor.Action> {
+        let keyboardObservable: Observable<Action> = keyboard().map { .tableViewOffset($0) }
+        
+        return .merge(action, keyboardObservable)
+    }
+    
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case let .search(word):
-            return merge(.word(word), .page(1), with: search(word: word, page: 1, pageSize: SearchPageSize, clear: true))
+            return merge(.word(word), .page(1), .isBusy(true), with: search(word: word, page: 1, pageSize: SearchPageSize, clear: true))
             
         case .loadMore:
             if isLoadMore {
                 let page: Int = currentState.page + 1
-                return merge(.page(page), with: search(word: currentState.word, page: page, pageSize: SearchPageSize, clear: false))
+                return merge(.page(page), .isBusy(true), with: search(word: currentState.word, page: page, pageSize: SearchPageSize, clear: false))
             }
             return .empty()
+            
+        case let .select(indexPath):
+            return .just(.select(indexPath))
+            
+        case let .tableViewOffset(offset):
+            return .just(.tableViewOffset(offset))
         }
     }
     
@@ -52,11 +77,25 @@ class SearchReactor: Reactor {
         var state = state
         
         switch mutation {
+        case let .isBusy(isBusy):
+            state.isBusy = isBusy
+            
         case let .word(word):
             state.word = word
             
         case let .page(page):
             state.page = page
+            
+        case let .select(indexPath):
+            guard let row = state.sections[safe: indexPath.section]?.items[safe: indexPath.row] else { return state }
+            
+            switch row {
+            case let .result(result):
+                coordinatorDelegate?.showDetails(result: result)
+                
+            default:
+                return state
+            }
             
         case let .results(results, clear: clear):
             var items: [SearchRow] = []
@@ -76,6 +115,9 @@ class SearchReactor: Reactor {
             isLoadMore = results.count == SearchPageSize
             state.sections = [SearchSection(index: 0, items: items)]
             
+        case let .tableViewOffset(offset):
+            state.tableViewOffset = offset
+            
         case let .error(message):
             debugPrint(">>>>>>>>>>>>>>>>: \(message ?? "-")")
         }
@@ -91,15 +133,15 @@ extension SearchReactor {
         cancelRequest.onNext(())
         
         if word.isEmpty {
-            return .just(.results([], clear: true))
+            return concat(.isBusy(false), .results([], clear: true))
         }
         
         return SkyengAPIProvider.shared.rx.request(.search(word: word, page: page, pageSize: pageSize))
             .asObservable()
             .takeUntil(cancelRequest)
             .map { response -> [SearchResult] in try parser(data: response.data) }
-            .flatMap { results -> Observable<Mutation> in .just(.results(results, clear: clear)) }
-            .catchError { error -> Observable<Mutation> in .just(.error(error.localizedDescription)) }
+            .flatMap { [unowned self] results -> Observable<Mutation> in self.concat(.isBusy(false), .results(results, clear: clear)) }
+            .catchError { [unowned self] error -> Observable<Mutation> in self.concat(.isBusy(false), .error(error.localizedDescription)) }
     }
     
 }

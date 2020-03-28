@@ -22,3 +22,20 @@ extension Reactor {
         merge(mutations, with: with)
     }
 }
+
+extension Reactor {
+    
+    func keyboard() -> Observable<CGFloat> {
+        let show = NotificationCenter.default
+            .rx.notification(UIResponder.keyboardWillShowNotification)
+            .map { notification in notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect }
+            .map { $0?.height ?? 0 }
+        
+        let hide = NotificationCenter.default
+            .rx.notification(UIResponder.keyboardWillHideNotification)
+            .map { _ in CGFloat(0) }
+        
+        return .merge(show, hide)
+    }
+    
+}

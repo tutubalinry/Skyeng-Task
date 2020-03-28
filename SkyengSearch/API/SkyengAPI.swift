@@ -38,7 +38,7 @@ extension SkyengAPI: TargetType {
     var task: Task {
         switch self {
         case .search:
-            return Task.requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
     

@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, View {
         view.backgroundColor = .white
         view.estimatedRowHeight = 50
         view.rowHeight = UITableView.automaticDimension
+        view.tableFooterView = UIView()
         view.register(SearchResultCell.self, LoadingCell.self)
         return view
     }()
@@ -25,6 +26,14 @@ class SearchViewController: UIViewController, View {
         controller.obscuresBackgroundDuringPresentation = false
         controller.searchBar.placeholder = "Input word"
         return controller
+    }()
+    
+    private let emptyLabel: UILabel = {
+        let view = UILabel()
+        view.attributedText = NSAttributedString(string: "No results", attributes: [.font : UIFont.italicSystemFont(ofSize: 48), .foregroundColor : UIColor.gray])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
     }()
     
     override func viewDidLoad() {
@@ -44,12 +53,17 @@ class SearchViewController: UIViewController, View {
         
         view.addSubview(tableView)
         
+        view.addSubview(emptyLabel)
+        
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     func bind(reactor: SearchReactor) {
@@ -69,8 +83,27 @@ class SearchViewController: UIViewController, View {
         reactor.state.map { $0.sections }
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        reactor.state.map { !$0.showEmptyLabel }
+            .distinctUntilChanged()
+            .bind(to: emptyLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.tableViewOffset }
+            .distinctUntilChanged()
+            .map { UIEdgeInsets(top: 0, left: 0, bottom: $0, right: 0) }
+            .bind(to: tableView.rx.contentInset)
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .map { Reactor.Action.select($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .bind(to: tableView.rx.deselect)
+            .disposed(by: disposeBag)
     }
-    
 }
 
 extension SearchViewController: UITableViewDelegate {

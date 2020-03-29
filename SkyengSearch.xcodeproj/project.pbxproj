@@ -23,6 +23,7 @@
 		0ADF196424311EEC00238A35 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF196324311EEC00238A35 /* UIViewController+Ext.swift */; };
 		0ADF196624311FBF00238A35 /* ObservableType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF196524311FBF00238A35 /* ObservableType+Ext.swift */; };
 		0ADF1969243120FC00238A35 /* URLImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF1968243120FC00238A35 /* URLImageButton.swift */; };
+		0ADF197324313EBA00238A35 /* SkyengSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF197224313EBA00238A35 /* SkyengSearchTests.swift */; };
 		A03A3BC7242E93C600107FD8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3BC6242E93C600107FD8 /* Parser.swift */; };
 		A03A3BCA242E9D1B00107FD8 /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3BC9242E9D1B00107FD8 /* UIScrollView+Ext.swift */; };
 		A03A3BCC242E9F7200107FD8 /* Reactor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3BCB242E9F7200107FD8 /* Reactor+Ext.swift */; };
@@ -41,6 +42,16 @@
 		A066CB892430048800B92F1F /* UIApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066CB882430048800B92F1F /* UIApplication+Ext.swift */; };
 		FF375FC083880D114AD9A28E /* Pods_SkyengSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0ADF197524313EBA00238A35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A094DD7242E355E000127BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A094DDE242E355E000127BE;
+			remoteInfo = SkyengSearch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A094DDF242E355E000127BE /* SkyengSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyengSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +72,9 @@
 		0ADF196324311EEC00238A35 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		0ADF196524311FBF00238A35 /* ObservableType+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Ext.swift"; sourceTree = "<group>"; };
 		0ADF1968243120FC00238A35 /* URLImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageButton.swift; sourceTree = "<group>"; };
+		0ADF197024313EBA00238A35 /* SkyengSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyengSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADF197224313EBA00238A35 /* SkyengSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyengSearchTests.swift; sourceTree = "<group>"; };
+		0ADF197424313EBA00238A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E4A290708268BE9FF0CF3EF /* Pods-SkyengSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyengSearch.release.xcconfig"; path = "Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch.release.xcconfig"; sourceTree = "<group>"; };
 		14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyengSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03A3BC6242E93C600107FD8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
@@ -91,6 +105,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0ADF196D24313EBA00238A35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0A094DE1242E355E000127BE /* SkyengSearch */,
+				0ADF197124313EBA00238A35 /* SkyengSearchTests */,
 				0A094DE0242E355E000127BE /* Products */,
 				40C83237DB3B94320987677C /* Pods */,
 				56FC61BB42B42C72BDD71F22 /* Frameworks */,
@@ -108,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				0A094DDF242E355E000127BE /* SkyengSearch.app */,
+				0ADF197024313EBA00238A35 /* SkyengSearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +250,15 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		0ADF197124313EBA00238A35 /* SkyengSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF197224313EBA00238A35 /* SkyengSearchTests.swift */,
+				0ADF197424313EBA00238A35 /* Info.plist */,
+			);
+			path = SkyengSearchTests;
+			sourceTree = "<group>";
+		};
 		40C83237DB3B94320987677C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +359,24 @@
 			productReference = 0A094DDF242E355E000127BE /* SkyengSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0ADF196F24313EBA00238A35 /* SkyengSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ADF197724313EBA00238A35 /* Build configuration list for PBXNativeTarget "SkyengSearchTests" */;
+			buildPhases = (
+				0ADF196C24313EBA00238A35 /* Sources */,
+				0ADF196D24313EBA00238A35 /* Frameworks */,
+				0ADF196E24313EBA00238A35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ADF197624313EBA00238A35 /* PBXTargetDependency */,
+			);
+			name = SkyengSearchTests;
+			productName = SkyengSearchTests;
+			productReference = 0ADF197024313EBA00238A35 /* SkyengSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -339,6 +389,10 @@
 				TargetAttributes = {
 					0A094DDE242E355E000127BE = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					0ADF196F24313EBA00238A35 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 0A094DDE242E355E000127BE;
 					};
 				};
 			};
@@ -356,6 +410,7 @@
 			projectRoot = "";
 			targets = (
 				0A094DDE242E355E000127BE /* SkyengSearch */,
+				0ADF196F24313EBA00238A35 /* SkyengSearchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -367,6 +422,13 @@
 			files = (
 				0A094DEF242E3560000127BE /* LaunchScreen.storyboard in Resources */,
 				0A094DEC242E3560000127BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ADF196E24313EBA00238A35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +514,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0ADF196C24313EBA00238A35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ADF197324313EBA00238A35 /* SkyengSearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0ADF197624313EBA00238A35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A094DDE242E355E000127BE /* SkyengSearch */;
+			targetProxy = 0ADF197524313EBA00238A35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0A094DED242E3560000127BE /* LaunchScreen.storyboard */ = {
@@ -623,6 +701,46 @@
 			};
 			name = Release;
 		};
+		0ADF197824313EBA00238A35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG4A3GR2VY;
+				INFOPLIST_FILE = SkyengSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = noname.SkyengSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyengSearch.app/SkyengSearch";
+			};
+			name = Debug;
+		};
+		0ADF197924313EBA00238A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FG4A3GR2VY;
+				INFOPLIST_FILE = SkyengSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = noname.SkyengSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyengSearch.app/SkyengSearch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -640,6 +758,15 @@
 			buildConfigurations = (
 				0A094DF4242E3560000127BE /* Debug */,
 				0A094DF5242E3560000127BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ADF197724313EBA00238A35 /* Build configuration list for PBXNativeTarget "SkyengSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ADF197824313EBA00238A35 /* Debug */,
+				0ADF197924313EBA00238A35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

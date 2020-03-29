@@ -20,6 +20,9 @@
 		0A5483CD242E4912001DC023 /* Meaning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483CC242E4912001DC023 /* Meaning.swift */; };
 		0A5483D1242E4FC4001DC023 /* SearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483D0242E4FC4001DC023 /* SearchRow.swift */; };
 		0A5483D3242E5436001DC023 /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5483D2242E5436001DC023 /* SearchSection.swift */; };
+		0ADF196424311EEC00238A35 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF196324311EEC00238A35 /* UIViewController+Ext.swift */; };
+		0ADF196624311FBF00238A35 /* ObservableType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF196524311FBF00238A35 /* ObservableType+Ext.swift */; };
+		0ADF1969243120FC00238A35 /* URLImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF1968243120FC00238A35 /* URLImageButton.swift */; };
 		A03A3BC7242E93C600107FD8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3BC6242E93C600107FD8 /* Parser.swift */; };
 		A03A3BCA242E9D1B00107FD8 /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3BC9242E9D1B00107FD8 /* UIScrollView+Ext.swift */; };
 		A03A3BCC242E9F7200107FD8 /* Reactor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3BCB242E9F7200107FD8 /* Reactor+Ext.swift */; };
@@ -55,6 +58,9 @@
 		0A5483CC242E4912001DC023 /* Meaning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meaning.swift; sourceTree = "<group>"; };
 		0A5483D0242E4FC4001DC023 /* SearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRow.swift; sourceTree = "<group>"; };
 		0A5483D2242E5436001DC023 /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
+		0ADF196324311EEC00238A35 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		0ADF196524311FBF00238A35 /* ObservableType+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Ext.swift"; sourceTree = "<group>"; };
+		0ADF1968243120FC00238A35 /* URLImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageButton.swift; sourceTree = "<group>"; };
 		0E4A290708268BE9FF0CF3EF /* Pods-SkyengSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyengSearch.release.xcconfig"; path = "Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch.release.xcconfig"; sourceTree = "<group>"; };
 		14F152587B5386D5D181EFD4 /* Pods_SkyengSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyengSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03A3BC6242E93C600107FD8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
@@ -213,6 +219,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		0ADF1967243120ED00238A35 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF1968243120FC00238A35 /* URLImageButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		40C83237DB3B94320987677C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +253,8 @@
 				A03A3BD5242EA42600107FD8 /* UITableViewCell+Ext.swift */,
 				A066CB75242FE0D600B92F1F /* Collection+Ext.swift */,
 				A066CB882430048800B92F1F /* UIApplication+Ext.swift */,
+				0ADF196324311EEC00238A35 /* UIViewController+Ext.swift */,
+				0ADF196524311FBF00238A35 /* ObservableType+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +262,7 @@
 		A03A3BCD242EA2F900107FD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0ADF1967243120ED00238A35 /* Buttons */,
 				A03A3BCE242EA30600107FD8 /* Cells */,
 			);
 			path = Views;
@@ -404,11 +421,13 @@
 			files = (
 				A066CB80242FF19C00B92F1F /* DetailsRow.swift in Sources */,
 				A066CB7E242FF19400B92F1F /* DetailsSection.swift in Sources */,
+				0ADF196424311EEC00238A35 /* UIViewController+Ext.swift in Sources */,
 				0A5483C8242E3DDE001DC023 /* SkyengAPIProvider.swift in Sources */,
 				A066CB82242FF46B00B92F1F /* MeaningCell.swift in Sources */,
 				A03A3BD6242EA42600107FD8 /* UITableViewCell+Ext.swift in Sources */,
 				A066CB7B242FE21100B92F1F /* DetailsReactor.swift in Sources */,
 				A066CB76242FE0D600B92F1F /* Collection+Ext.swift in Sources */,
+				0ADF196624311FBF00238A35 /* ObservableType+Ext.swift in Sources */,
 				A066CB892430048800B92F1F /* UIApplication+Ext.swift in Sources */,
 				A03A3BD4242EA41C00107FD8 /* UITableView+Ext.swift in Sources */,
 				0A5483D3242E5436001DC023 /* SearchSection.swift in Sources */,
@@ -417,6 +436,7 @@
 				A03A3BD0242EA31800107FD8 /* SearchResultCell.swift in Sources */,
 				A066CB85242FFA3500B92F1F /* AudioPlayer.swift in Sources */,
 				0A5483C6242E3C03001DC023 /* SkyengAPI.swift in Sources */,
+				0ADF1969243120FC00238A35 /* URLImageButton.swift in Sources */,
 				0A5483BD242E3AC8001DC023 /* MainCoordinator.swift in Sources */,
 				0A094DE3242E355E000127BE /* AppDelegate.swift in Sources */,
 				0A5483D1242E4FC4001DC023 /* SearchRow.swift in Sources */,

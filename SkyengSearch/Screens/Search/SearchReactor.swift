@@ -34,6 +34,8 @@ class SearchReactor: Reactor {
         
         var tableViewOffset: CGFloat = 0
         
+        var error: String?
+        
         var showEmptyLabel: Bool {
             return !isBusy && !word.isEmpty && sections.first?.items.count == 0
         }
@@ -75,6 +77,7 @@ class SearchReactor: Reactor {
     
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
+        state.error = nil
         
         switch mutation {
         case let .isBusy(isBusy):
@@ -119,7 +122,7 @@ class SearchReactor: Reactor {
             state.tableViewOffset = offset
             
         case let .error(message):
-            debugPrint(">>>>>>>>>>>>>>>>: \(message ?? "-")")
+            state.error = message
         }
         
         return state

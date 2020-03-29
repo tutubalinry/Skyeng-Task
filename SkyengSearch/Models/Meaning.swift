@@ -23,9 +23,9 @@ struct Meaning {
     let partOfSpeechCode: String
     let translationText: String
     let translationNote: String?
+    let transcription: String
     let previewURL: URL?
     let imageURL: URL?
-    let transcription: String
     let soundURL: URL?
 }
 
@@ -53,11 +53,36 @@ extension Meaning: Decodable {
         
         id = try container.decode(Int.self, forKey: .id)
         partOfSpeechCode = try container.decode(String.self, forKey: .partOfSpeechCode)
-        previewURL = try container.decode(URL?.self, forKey: .previewUrl)
-        imageURL = try container.decode(URL?.self, forKey: .imageUrl)
         transcription = try container.decode(String.self, forKey: .transcription)
-        soundURL = try container.decode(URL?.self, forKey: .soundUrl)
         translationText = try translationContainer.decode(String.self, forKey: .text)
         translationNote = try translationContainer.decode(String?.self, forKey: .note)
+        
+        if let previewString = try? container.decode(String.self, forKey: .previewUrl), var components = URLComponents(string: previewString) {
+            if components.scheme == nil {
+                components.scheme = "https"
+            }
+            previewURL = components.url
+        } else {
+            previewURL = nil
+        }
+        
+        if let imageString = try? container.decode(String.self, forKey: .imageUrl), var components = URLComponents(string: imageString) {
+            if components.scheme == nil {
+                components.scheme = "https"
+            }
+            imageURL = components.url
+        } else {
+            imageURL = nil
+        }
+        
+        if let soundString = try? container.decode(String.self, forKey: .soundUrl), var components = URLComponents(string: soundString) {
+            if components.scheme == nil {
+                components.scheme = "https"
+            }
+            soundURL = components.url
+        } else {
+            soundURL = nil
+        }
+        
     }
 }

@@ -3,7 +3,7 @@ import UIKit
 struct ImageViewer {
     
     static func show(url: URL?) {
-        guard let oldURL = url, let url = URL(string: "https:\(oldURL.absoluteString)") else { return }
+        guard let url = url else { return }
         
         DispatchQueue.main.async {
             let view = UIImageView(image: nil)

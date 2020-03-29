@@ -95,6 +95,11 @@ class SearchViewController: UIViewController, View {
             .bind(to: tableView.rx.contentInset)
             .disposed(by: disposeBag)
         
+        reactor.state.map { $0.error }
+            .filterNil()
+            .bind(to: rx.errorAlert)
+            .disposed(by: disposeBag)
+        
         tableView.rx.itemSelected
             .map { Reactor.Action.select($0) }
             .bind(to: reactor.action)

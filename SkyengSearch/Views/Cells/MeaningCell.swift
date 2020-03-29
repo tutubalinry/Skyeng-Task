@@ -14,11 +14,8 @@ class MeaningCell: UITableViewCell {
         return view
     }()
     
-    private let imageButton: UIButton = {
-        let view = UIButton()
-        view.backgroundColor = .black
-        view.layer.cornerRadius = 16
-        view.clipsToBounds = true
+    private let imageButton: URLImageButton = {
+        let view = URLImageButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -27,6 +24,9 @@ class MeaningCell: UITableViewCell {
         let view = UIButton()
         view.setImage(UIImage(systemName: "play"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 16
+        view.layer.borderColor = UIColor.systemBlue.cgColor
+        view.layer.borderWidth = 2
         return view
     }()
     
@@ -73,6 +73,8 @@ class MeaningCell: UITableViewCell {
         
         translationLabel.text = meaning.translationText
         transcriptionLabel.text = "[\(meaning.transcription)]"
+        
+        imageButton.setup(url: meaning.previewURL)
     }
     
     @objc private func play() {

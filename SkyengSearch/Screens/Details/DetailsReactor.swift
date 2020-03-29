@@ -33,14 +33,4 @@ class DetailsReactor: Reactor {
         initialState = State(data: data)
     }
     
-    func mutate(action: DetailsReactor.Action) -> Observable<DetailsReactor.Mutation> {
-        return .empty()
-    }
-    
-    func reduce(state: DetailsReactor.State, mutation: DetailsReactor.Mutation) -> DetailsReactor.State {
-        var state = state
-        
-        return state
-    }
-    
 }

@@ -82,7 +82,6 @@
 		0ADF197A2431B5E300238A35 /* SearchResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTests.swift; sourceTree = "<group>"; };
 		0ADF197E2431BE0200238A35 /* MeaningTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaningTest.swift; sourceTree = "<group>"; };
 		0ADF19842431C09E00238A35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0ADF19862431C0B900238A35 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0ADF19872431C0B900238A35 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0ADF19882431C20600238A35 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		0E4A290708268BE9FF0CF3EF /* Pods-SkyengSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyengSearch.release.xcconfig"; path = "Target Support Files/Pods-SkyengSearch/Pods-SkyengSearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -564,7 +563,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				0A094DEE242E3560000127BE /* Base */,
-				0ADF19862431C0B900238A35 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

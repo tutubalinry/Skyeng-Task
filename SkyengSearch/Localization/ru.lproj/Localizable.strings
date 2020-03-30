@@ -1,0 +1,10 @@
+/* Search */
+
+/* (No comment) */
+"search.title" = "Поиск";
+
+/* (No comment) */
+"search.input_word" = "Введите слово";
+
+/* (No comment) */
+"search.nothing_found" = "Ничего не найдено";

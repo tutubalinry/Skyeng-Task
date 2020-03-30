@@ -3,13 +3,9 @@ import ReactorKit
 
 class DetailsReactor: Reactor {
     
-    enum Action {
-        
-    }
+    enum Action {}
     
-    enum Mutation {
-        
-    }
+    enum Mutation {}
     
     struct State {
         let data: SearchResult

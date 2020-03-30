@@ -24,13 +24,13 @@ class SearchViewController: UIViewController, View {
         let controller = UISearchController(searchResultsController: nil)
         controller.searchResultsUpdater = self
         controller.obscuresBackgroundDuringPresentation = false
-        controller.searchBar.placeholder = "Input word"
+        controller.searchBar.placeholder = "search.input_word".localized()
         return controller
     }()
     
     private let emptyLabel: UILabel = {
         let view = UILabel()
-        view.attributedText = NSAttributedString(string: "No results", attributes: [.font : UIFont.italicSystemFont(ofSize: 48), .foregroundColor : UIColor.gray])
+        view.attributedText = NSAttributedString(string: "search.nothing_found".localized(), attributes: [.font : UIFont.italicSystemFont(ofSize: 48), .foregroundColor : UIColor.gray])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         return view
@@ -43,7 +43,7 @@ class SearchViewController: UIViewController, View {
     }
     
     private func setupViews() {
-        title = "Search"
+        title = "search.title".localized()
         
         definesPresentationContext = true
         

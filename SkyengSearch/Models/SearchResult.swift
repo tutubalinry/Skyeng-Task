@@ -51,6 +51,14 @@ extension SearchResult {
     }
 }
 
+extension SearchResult: Equatable {
+    
+    static func ==(lhs: SearchResult, rhs: SearchResult) -> Bool {
+        lhs.id == rhs.id && lhs.text == rhs.text && lhs.meanings == rhs.meanings
+    }
+    
+}
+
 extension SearchResult: Decodable {
     
     enum CodingKeys: CodingKey {
